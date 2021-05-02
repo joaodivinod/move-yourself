@@ -1,5 +1,6 @@
-import {ExperienceBar} from "../components/ExperienceBar";
 import Head from "next/head";
+import {CompletedChallends} from "../components/CompletedChallends";
+import {ExperienceBar} from "../components/ExperienceBar";
 import {Profile} from "../components/Profile";
 
 import styles from '../styles/pages/Home.module.css'
@@ -7,18 +8,11 @@ import styles from '../styles/pages/Home.module.css'
 export default function Home() {
     return (
         <div className={styles.container}>
-            <Head>
-                <title>Move Yourself</title>
-            </Head>
-            <ExperienceBar/>
+            <ExperienceBar />
 
             <section>
-                <div>
-                    <Profile/>
-                </div>
-                <div>
-
-                </div>
+                <Profile/>
+                <CompletedChallends/>
             </section>
 
         </div>
