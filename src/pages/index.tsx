@@ -8,6 +8,9 @@ import {Countdown} from "../components/Countdown";
 import Head from "next/head";
 import {ChallengBox} from "../components/ChallengBox";
 
+import {CountDownProvider} from "../contexts/CountDownContext";
+
+
 
 export default function Home() {
     return (
@@ -17,18 +20,21 @@ export default function Home() {
                 <title>Inicio Move Yourself</title>
             </Head>
 
-            <ExperienceBar />
+            <ExperienceBar/>
 
-            <section>
-                <div>
-                    <Profile />
-                    <CompletedChallends />
-                    <Countdown />
-                </div>
-                <div>
-                <ChallengBox />
-                </div>
-            </section>
+            <CountDownProvider>
+                <section>
+                    <div>
+                        <Profile/>
+                        <CompletedChallends/>
+                        <Countdown/>
+                    </div>
+                    <div>
+                        <ChallengBox/>
+                    </div>
+                </section>
+            </CountDownProvider>
+
         </div>
     )
 }
